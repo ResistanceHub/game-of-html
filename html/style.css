@@ -107,3 +107,9 @@ h2 {
     width: 20%;
   }
 }
+
+@media all and (min-width: 130em) {
+  .character {
+    width: 10%;
+  }
+}
