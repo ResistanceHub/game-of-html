@@ -102,14 +102,15 @@ h2 {
   }
 }
 
-@media all and (min-width: 70em) {
+@media all and (min-width: 70em)  {
   .character {
     width: 20%;
   }
 }
 
-@media all and (min-width: 130em) {
+@media all and (min-width: 120em) {
   .character {
     width: 10%;
   }
+
 }
