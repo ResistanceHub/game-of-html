@@ -3,6 +3,7 @@
 ## What is the point?
 
 This exercise will give you some experience with:
+
 - Solving large coding problems
 - Git
 - C#
@@ -45,6 +46,7 @@ Not only can we view this data through the site, but we can also view the result
 #### Using the browser
 
 Open Chrome and copy some of the API urls into the address bar and press `ENTER`:
+
 - https://anapioficeandfire.com/api/books/1
 - https://anapioficeandfire.com/api/characters/583
 - https://anapioficeandfire.com/api/houses/378
@@ -61,6 +63,7 @@ Postman is a tool that can be used to make API requests. You can download it fro
 This page explains how to make requests: https://www.getpostman.com/docs/v6/postman/launching_postman/sending_the_first_request
 
 Perform "GET" requests on these URLs
+
 - https://anapioficeandfire.com/api/books
 - https://anapioficeandfire.com/api/characters
 - https://anapioficeandfire.com/api/houses
