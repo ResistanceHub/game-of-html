@@ -29,7 +29,7 @@ The goal of this section is to retrieve data from an API and display this data t
 
 ### Exploring the API
 
-We will be using data from An "API of Ice and Fire" - https://anapioficeandfire.com/
+We will be using data from "An API of Ice and Fire" - https://anapioficeandfire.com/
 
 This provides API provides information about the Game Of Thrones books.
 
@@ -72,12 +72,13 @@ Note how the URLs are different here. For example we are retrieving all books, n
 
 #### Introduction to JSON
 
-Placing a URL into the address bar and pressing `ENTER` results in the browser making a "GET" request to the server. The server processes the request and returns the results. These results being returned in JSON (JavaScript Object Notation).
+Placing a URL into the address bar and pressing `ENTER` results in the browser making a "GET" request to the server. The server processes the request and returns the results. These results are being returned in JavaScript Object Notation (JSON).
 
 Using this as an example: https://anapioficeandfire.com/api/houses/378
 
 Notice the key value pairs e.g.
-A simple string
+
+A simple string example
 ```
 "region": "The Crownlands"
 ```
@@ -120,7 +121,8 @@ For completeness, the value can also be an array of objects.
   }]
 ```
 
-Going back to the original example, we can see the entire response is actually one big JSON object.
+Going back to the original example (api/houses/378), we can see the entire response is actually one big JSON object.
+
 ```
 {  <---- start of the object
 	"url": "https://anapioficeandfire.com/api/houses/378",
