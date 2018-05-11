@@ -8,8 +8,9 @@ body {
   background-color: fff;
 }
 h1 {
-  font-size: 30px;
+  font-size: 34px;
   color: #4d4d4d;
+  font-family: 'Merienda', cursive;
 }
 div {
   font-size: 20px;
@@ -17,14 +18,19 @@ div {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 28px;
   color: #4d4d4d;
+  font-family: 'Merienda', cursive;
 }
 
 .header-section {
   background-color: #33b8d1;
   padding: 15px;
+  min-height: 120px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .book-title {
@@ -34,42 +40,61 @@ h2 {
 }
 
 .characters {
-  display: flex;
-  flex-wrap: wrap;
   margin-top: 15px;
-  font-size: 0;
+  display: grid;
+  grid-gap: 12px 12px;
 }
 
 .character {
-  display: flex;
-  background-color: #fff;
-  padding: 5px;
-}
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "name name"
+    "culture status";
 
-.character-body {
-  display: flex;
-  flex-direction: column;
+  min-height: 200px;
   background-color: #a2dfea;
-  padding: 15px;
-  width: 100%;
+  padding: 20px;
   transition: background-color 0.5s, box-shadow 0.5s;
 }
 
-.character-body div:first-child  {
-  flex: 1 0 auto;
-}
-
-.character-body:hover {
+.character:hover {
   background-color: #bee9f0;
   box-shadow: rgba(0,0,0,0.3) 0px 5px 16px 0px;
 }
 
-.character-body div:first-child {
+.dead {
+  background-color: #ccc;
+}
+
+.dead:hover {
+  background-color: #ddd;
+}
+
+.character div:first-child {
+  grid-area: name;
+  justify-self: center;
+  align-self: end;
+  text-align: center;
   font-weight: bold;
+  font-size: 22px;
   padding: 10px 0;
 }
 
-.character-body div:not(:first-child) {
+.character div:nth-child(2) {
+  grid-area: status;
+  justify-self: end;
+  align-self: end;
+}
+
+.character div:nth-child(3) {
+  grid-area: culture;
+  justify-self: start;
+  align-self: end;
+}
+
+.character div:not(:first-child) {
   color: #999;
   font-size: 18px;
 }
@@ -78,39 +103,49 @@ h2 {
   box-shadow: rgba(0,0,0,0.3) 0px 1px 6px 0px;
 }
 
+/* Example media quries */
 @media all and (min-width: 20em) {
+  .characters {
+    grid-template-columns: repeat(1, 1fr [col-character]);
+  }
+
   .character {
-    width: 100%;
+    min-height: 100px;
   }
 }
 
 @media all and (min-width: 40em) {
+  .characters {
+    grid-template-columns: repeat(2, 1fr [col-character]);
+  }
   .character {
-    width: 50%;
+    min-height: 150px;
   }
 }
 
 @media all and (min-width: 50em) {
-  .character {
-    width: 33.33%;
+  .characters {
+    grid-template-columns: repeat(3, 1fr [col-character]);
   }
 }
 
 @media all and (min-width: 60em) {
+  .characters {
+    grid-template-columns: repeat(4, 1fr [col-character]);
+  }
   .character {
-    width: 25%;
+    min-height: 200px;
   }
 }
 
 @media all and (min-width: 70em)  {
-  .character {
-    width: 20%;
+  .characters {
+    grid-template-columns: repeat(4, 1fr [col-character]);
   }
 }
 
 @media all and (min-width: 120em) {
-  .character {
-    width: 10%;
+  .characters {
+    grid-template-columns: repeat(5, 1fr [col-character]);
   }
-
 }
