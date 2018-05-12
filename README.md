@@ -12,7 +12,6 @@ This exercise will give you some experience with:
 - Reading and\or writing files in C#
 - Network APIs
 - NuGet packages
-- Testing
 - Debugging
 - Postman (optional)
 
@@ -40,7 +39,7 @@ This data is being returned in a serialization format known as JSON.
 
 ### Introduction to JSON
 
-Go to the "API of Ice and Fire" site (https://anapioficeandfire.com/) and click on /houses/378.
+Go to the "An API of Ice and Fire" site (https://anapioficeandfire.com/) and click on /houses/378.
 
 This will return the data found at: https://anapioficeandfire.com/api/houses/378
 
@@ -183,9 +182,87 @@ Notice the use of `JArray` from Json.Net in those examples. That shows a conveni
 
 Make sure that you read a few of the options there before you decide which to try first.
 
-## Reading and Writing Files in C# code
+## Reading and Writing Files
 
 This tutorial shows how to read and write to files in C# - http://csharp.net-tutorials.com/file-handling/reading-and-writing/
+
+Look out for:
+
+- File.ReadAllText
+- File.WriteAllText
+
+## The Challenge
+
+The challenge is to use anapioficeandfire.com to create an html file displaying all the books, and each point of view (POV) character in each book.
+
+First we will create a basic HTML file, which does not contain any styling (no classes or css). In step 2 we will add CSS and the required classes.
+
+### Step 1 - Basic Content
+
+Your objective here it to create an HTML file, which does not have any style, just proper HTML tags with content.
+
+Have a look at the sample html file found in `game-of-html/samples/index.html`
+
+Your HTML document must start the same way with
+
+- a doctype
+- opening the `html` and `body` tags
+- declare a header which uses a `div` and `h1`
+
+Make sure your page start with this:
+
+```
+<!DOCTYPE html>
+<html>
+  <body>
+    <div><h1>Point of View Characters in Game of Thrones</h1></div>
+
+```
+You also need to close these tags, place this at the end of the file
+
+```
+  </body>
+</html>
+```
+
+In the middle of these sections comes the books and characters section. For each book you need to add the book title and some details for each of the POV characters (povCharacters) in that book.
+
+The sample page shows two books, with a few of the POV characters.
+
+The title of the book should be added as follows:
+
+```
+  <h2>A Game of Thrones</h2>
+```
+Then add some details of each POV character. The details needed are the "name", "Alive\Dead", and "culture".
+
+These details must be added with the expected HTML tags. This is an example of the book title again, and the first two characters
+
+```
+    <h2>A Game of Thrones</h2>
+    <div>
+      <div>
+        <div>Arya Stark</div>
+        <div>Alive</div>
+        <div>Northmen</div>
+      </div>
+      <div>
+        <div>Brandon Stark</div>
+        <div>Alive</div>
+        <div>Northmen</div>
+      </div>
+    </div>
+```
+
+In your html file you should include all the POV characters for the book, and then repeat this for all the other books.
+
+Once you are generating this file correctly, you should be able open the file in a browser and see the following
+
+![Scheme](images/basic-html)
+
+
+## Step 2 - Add Styles
+
 
 
 #### GoT Trivia
