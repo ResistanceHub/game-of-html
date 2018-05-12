@@ -258,7 +258,7 @@ In your html file you should include all the POV characters for the book, and th
 
 Once you are generating this file correctly, you should be able open the file in a browser and see the following
 
-![Scheme](images/basic-html)
+![Scheme](images/basic-html.png)
 
 
 ## Step 2 - Add Styles
