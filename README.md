@@ -185,7 +185,7 @@ Make sure that you read a few of the options there before you decide which to tr
 
 ## Reading and Writing Files in C#
 
-This tutorial shows how to read and write to text files in C# - http://csharp.net-tutorials.com/file-handling/reading-and-writing/
+This tutorial shows how to read and write to files in C# - http://csharp.net-tutorials.com/file-handling/reading-and-writing/
 
 
 #### GoT Trivia
