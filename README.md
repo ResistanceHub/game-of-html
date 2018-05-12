@@ -256,14 +256,65 @@ These details must be added with the expected HTML tags. This is an example of t
 
 In your html file you should include all the POV characters for the book, and then repeat this for all the other books.
 
-Once you are generating this file correctly, you should be able open the file in a browser and see the following
+Once you are generating this file correctly, you should be able open the file in a browser and see something similar to:
 
 ![Scheme](images/basic-html.png)
 
 
 ## Step 2 - Add Styles
 
+Next we will add styling through classes and CSS.
 
+Add the following `head` section
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+```
+
+This is going to reference a CSS file, which needs to next to the HTML file you are creating. Copy\paste `samples/style.css` so that it is next to the html file that you are generating.
+
+Add the following classes to the page header
+
+```
+<div class="header-section shadow"><h1>Point of View Characters in Game of Thrones</h1></div>
+```
+
+Add the following classes to the books title
+
+```
+    <h2 class="book-title shadow">A Game of Thrones</h2>
+```
+
+This sample shows the remaining classes which are needed:
+
+```
+    <div class="characters">
+      <div class="character shadow dead">
+        <div>Jon Snow</div>
+        <div>Dead</div>
+        <div>Northmen</div>
+      </div>
+      <div class="character shadow">
+        <div>Arya Stark</div>
+        <div>Alive</div>
+        <div></div>
+      </div>
+```
+
+Note the extra class for "dead" characters.
+
+Once this has been done correctly the page should look similar to this partial screenshot:
+
+![Scheme](images/styled-html.png)
+
+If you managed this, congratulations!!!
 
 #### GoT Trivia
 
