@@ -1,6 +1,25 @@
 # Game of HTML
 
-## What is the point?
+
+- [Learning Outcomes](#learning-outcomes)
+- [The Goal](#the-goal)
+- [Preparation](#preparation)
+  - [JSON](#json)
+  - [Exploring anapioficeandfire.com](#exploring-anapioficeandfirecom)
+  - [Using the browser to fetch data from the API](#using-the-browser-to-fetch-data-from-the-api)
+  - [Using Postman to fetch data from the API](#using-postman-to-fetch-data-from-the-api)
+  - [Using curl to fetch data from the API](#using-curl-to-fetch-data-from-the-api)
+  - [Using C# to fetch data from the API](#using-c-to-fetch-data-from-the-api)
+    - [Deserialize JSON](#deserialize-json)
+    - [Making the request](#making-the-request)
+  - [Reading and Writing Files](#reading-and-writing-files)
+- [The Challenge](#the-challenge)
+  - [Step 1 - Basic Content](#step-1---basic-content)
+  - [Step 2 - Add Styles](#step-2---add-styles)
+- [The End](#the-end)
+    - [Game of Thrones Trivia](#game-of-thrones-trivia)
+
+## Learning Outcomes?
 
 This exercise will give you some experience with:
 
@@ -26,7 +45,7 @@ We will be using data from "An API of Ice and Fire" - https://anapioficeandfire.
 
 Before getting into the coding challenge we will cover some topics that will be useful to complete the exercise.
 
-## JSON
+### JSON
 
 Like many APIs, anapioficeandfire.com returns data formatted in JavaScript Object Notation (JSON). Therefore it will be helpful to know about JSON. w3schools provides a good introduction to this data format - https://www.w3schools.com/js/js_json_intro.asp
 
@@ -34,7 +53,7 @@ JSON is a serialization format. As explained [here](https://stackoverflow.com/a/
 
 > *Serialization* is the process of taking an object instance and converting it to a format in which it can be transported across a network or persisted to storage (such as a file or database). The serialized format contains the object's state information. *Deserialization* is the process of using the serialized state to reconstruct the object from the serialized state to its original state.
 
-## Exploring anapioficeandfire.com
+### Exploring anapioficeandfire.com
 
 anapioficeandfire.com provides information about the Game Of Thrones books. Documentation can be found here: https://anapioficeandfire.com/Documentation. The "Resources" section may be of help in completing this challenge.
 
@@ -134,14 +153,14 @@ curl https://anapioficeandfire.com/api/houses/1 | json_pp
 
 This was a `GET` request, but you can perform all the HTTP requests with curl e.g. `POST`, `PUT`, `DELETE` etc
 
-## Using C# to fetch data from the API
+### Using C# to fetch data from the API
 
 There are two challenges to overcome when consuming data from an API serving JSON
 
 - Desrializing the JSON
 - Requesting the DATA
 
-### Deserialize JSON
+#### Deserialize JSON
 
 When making a request in C# it is common for a response to be returned as a string. This string contains the JSON response. JSON is serialized data. To use this in C# we need to convert the JSON string into a C# object - this is known as deserialization.
 
@@ -158,7 +177,7 @@ These are tutorials showing how to use Json.NET to deserialize JSON.
 - https://www.c-sharpcorner.com/UploadFile/manas1/json-serialization-and-deserialization-using-json-net-librar/
 - https://community.jivesoftware.com/thread/282037
 
-### Making the request
+#### Making the request
 
 There are a number of different ways to make requests in C#. This write explains some of the popular C# approaches: https://code-maze.com/different-ways-consume-restful-api-csharp/#HttpWebRequest
 
@@ -166,7 +185,7 @@ Notice the use of `JArray` from Json.Net in those examples. That shows a conveni
 
 Make sure that you read a few of the options there before you decide which to try first.
 
-## Reading and Writing Files
+### Reading and Writing Files
 
 To solve this challenge you need to be able to write to text files. It may also be helpful to be able to read from files _hint hint_.
 
@@ -268,7 +287,7 @@ Once you are generating this file correctly, you should be able open the file in
 ![Scheme](images/basic-html.png)
 
 
-## Step 2 - Add Styles
+### Step 2 - Add Styles
 
 Next we will add styling through classes and CSS.
 
