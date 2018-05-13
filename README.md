@@ -1,25 +1,27 @@
 # Game of HTML
 
+<!-- TOC depthFrom:2 -->
 
-- [Learning Outcomes](#learning-outcomes)
-- [The Goal](#the-goal)
-- [Preparation](#preparation)
-  - [JSON](#json)
-  - [Exploring anapioficeandfire.com](#exploring-anapioficeandfirecom)
-  - [Using the browser to fetch data from the API](#using-the-browser-to-fetch-data-from-the-api)
-  - [Using Postman to fetch data from the API](#using-postman-to-fetch-data-from-the-api)
-  - [Using curl to fetch data from the API](#using-curl-to-fetch-data-from-the-api)
-  - [Using C# to fetch data from the API](#using-c-to-fetch-data-from-the-api)
-    - [Deserialize JSON](#deserialize-json)
-    - [Making the request](#making-the-request)
-  - [Reading and Writing Files](#reading-and-writing-files)
-- [The Challenge](#the-challenge)
-  - [Step 1 - Basic Content](#step-1---basic-content)
-  - [Step 2 - Add Styles](#step-2---add-styles)
-- [The End](#the-end)
-    - [Game of Thrones Trivia](#game-of-thrones-trivia)
+- [1. Learning Outcomes](#1-learning-outcomes)
+- [2. The Goal](#2-the-goal)
+- [3. Preparation](#3-preparation)
+  - [3.1. JSON](#31-json)
+  - [3.2. Exploring anapioficeandfire.com](#32-exploring-anapioficeandfirecom)
+  - [3.3. Using the browser to fetch data from the API](#33-using-the-browser-to-fetch-data-from-the-api)
+  - [3.4. Using Postman to fetch data from the API](#34-using-postman-to-fetch-data-from-the-api)
+  - [3.5. Using curl to fetch data from the API](#35-using-curl-to-fetch-data-from-the-api)
+  - [3.6. Using C# to fetch data from the API](#36-using-c-to-fetch-data-from-the-api)
+    - [3.6.1. Deserialize JSON](#361-deserialize-json)
+    - [3.6.2. Making the request](#362-making-the-request)
+  - [3.7. Reading and Writing Files](#37-reading-and-writing-files)
+- [4. The Challenge](#4-the-challenge)
+  - [4.1. Step 1 - Basic Content](#41-step-1---basic-content)
+  - [4.2. Step 2 - Add Styles](#42-step-2---add-styles)
+- [5. The End](#5-the-end)
 
-## Learning Outcomes?
+<!-- /TOC -->
+
+## 1. Learning Outcomes
 
 This exercise will give you some experience with:
 
@@ -34,18 +36,18 @@ This exercise will give you some experience with:
 - Debugging
 - Postman (optional)
 
-## What is the goal?
+## 2. The Goal
 
 The overall goal is to fetch data from a network API and then write that data into an HTML file.
 
 We will be using data from "An API of Ice and Fire" - https://anapioficeandfire.com/
 
 
-## Preparation
+## 3. Preparation
 
 Before getting into the coding challenge we will cover some topics that will be useful to complete the exercise.
 
-### JSON
+### 3.1. JSON
 
 Like many APIs, anapioficeandfire.com returns data formatted in JavaScript Object Notation (JSON). Therefore it will be helpful to know about JSON. w3schools provides a good introduction to this data format - https://www.w3schools.com/js/js_json_intro.asp
 
@@ -53,7 +55,7 @@ JSON is a serialization format. As explained [here](https://stackoverflow.com/a/
 
 > *Serialization* is the process of taking an object instance and converting it to a format in which it can be transported across a network or persisted to storage (such as a file or database). The serialized format contains the object's state information. *Deserialization* is the process of using the serialized state to reconstruct the object from the serialized state to its original state.
 
-### Exploring anapioficeandfire.com
+### 3.2. Exploring anapioficeandfire.com
 
 anapioficeandfire.com provides information about the Game Of Thrones books. Documentation can be found here: https://anapioficeandfire.com/Documentation. The "Resources" section may be of help in completing this challenge.
 
@@ -110,7 +112,7 @@ Notice the response starts with brackets
     "culture": "Braavosi",
 ```
 
-### Using the browser to fetch data from the API
+### 3.3. Using the browser to fetch data from the API
 
 Placing a URL into the address bar and pressing `ENTER` results in the browser making a `GET` request to the server. The server processes the request and returns the results.
 
@@ -124,7 +126,7 @@ These URLs retrieve a single resource e.g. one book.
 
 If the results are not being shown in a readable format, you may want to add a Chrome extension that can format JSON, e.g. JSONView - https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
 
-### Using Postman to fetch data from the API
+### 3.4. Using Postman to fetch data from the API
 
 Postman is a tool that can be used to make API requests. You can download it from here: https://www.getpostman.com/apps
 
@@ -138,7 +140,7 @@ Perform `GET` requests on these URLs
 
 Note how the URLs are different here. They are retrieving a list of resources, not just a specific one.
 
-### Using curl to fetch data from the API
+### 3.5. Using curl to fetch data from the API
 
 Curl is a command line tool, often used by developers to make quick calls to APIs. To try this out open Git Bash, and copy this line into it:
 
@@ -153,14 +155,14 @@ curl https://anapioficeandfire.com/api/houses/1 | json_pp
 
 This was a `GET` request, but you can perform all the HTTP requests with curl e.g. `POST`, `PUT`, `DELETE` etc
 
-### Using C# to fetch data from the API
+### 3.6. Using C# to fetch data from the API
 
 There are two challenges to overcome when consuming data from an API serving JSON
 
 - Desrializing the JSON
 - Requesting the DATA
 
-#### Deserialize JSON
+#### 3.6.1. Deserialize JSON
 
 When making a request in C# it is common for a response to be returned as a string. This string contains the JSON response. JSON is serialized data. To use this in C# we need to convert the JSON string into a C# object - this is known as deserialization.
 
@@ -177,7 +179,7 @@ These are tutorials showing how to use Json.NET to deserialize JSON.
 - https://www.c-sharpcorner.com/UploadFile/manas1/json-serialization-and-deserialization-using-json-net-librar/
 - https://community.jivesoftware.com/thread/282037
 
-#### Making the request
+#### 3.6.2. Making the request
 
 There are a number of different ways to make requests in C#. This write explains some of the popular C# approaches: https://code-maze.com/different-ways-consume-restful-api-csharp/#HttpWebRequest
 
@@ -185,7 +187,7 @@ Notice the use of `JArray` from Json.Net in those examples. That shows a conveni
 
 Make sure that you read a few of the options there before you decide which to try first.
 
-### Reading and Writing Files
+### 3.7. Reading and Writing Files
 
 To solve this challenge you need to be able to write to text files. It may also be helpful to be able to read from files _hint hint_.
 
@@ -198,7 +200,7 @@ Look out for:
 
 Also note where your file is being placed. I suspect that if you don't supply a full path or relative path, the file will end up in the `bin/debug` folder.
 
-## The Challenge
+## 4. The Challenge
 
 Now that we have covered most of the tools and technologies needed to perform this coding challenge, we can get into the details. Please note that the steps below are a guide, but they are not detailed instructions.
 
@@ -226,7 +228,7 @@ Book Title
 
 First we will write a C# program that will generate a basic HTML file, which does not contain any styling (no classes or CSS). In step 2 we will add CSS and the required classes.
 
-### Step 1 - Basic Content
+### 4.1. Step 1 - Basic Content
 
 Your objective here is to generate an HTML file, which does not have any style, just proper HTML tags with content. Have a look at the sample html file found in `game-of-html/samples/index.html`
 
@@ -287,7 +289,7 @@ Once you are generating this file correctly, you should be able open the file in
 ![Scheme](images/basic-html.png)
 
 
-### Step 2 - Add Styles
+### 4.2. Step 2 - Add Styles
 
 Next we will add styling through classes and CSS.
 
@@ -340,7 +342,7 @@ Once this has been done correctly the page should show blue and grey blocks. The
 
 Take a screenshot of the page and share it on slack, and I will tell you if it looks correct 😃
 
-## The End
+## 5. The End
 
 If you managed this, congratulations!!!
 
