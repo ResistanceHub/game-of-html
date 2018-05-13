@@ -31,6 +31,7 @@ Before getting into the coding challenge we will cover some topics that will be 
 Like many APIs, anapioficeandfire.com returns data formatted in JavaScript Object Notation (JSON). Therefore it will be helpful to know about JSON. w3schools provides a good introduction to this data format - https://www.w3schools.com/js/js_json_intro.asp
 
 JSON is a serialization format. As explained [here](https://stackoverflow.com/a/2170700/259477):
+
 > *Serialization* is the process of taking an object instance and converting it to a format in which it can be transported across a network or persisted to storage (such as a file or database). The serialized format contains the object's state information. *Deserialization* is the process of using the serialized state to reconstruct the object from the serialized state to its original state.
 
 ## Exploring anapioficeandfire.com
