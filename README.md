@@ -346,7 +346,6 @@ Take a screenshot of the page and share it on slack, and I will tell you if it l
 
 ## 5. The End
 
-If you managed this, congratulations!!!
 
 ![Schema](https://thumbs.dreamstime.com/t/congratulations-bubble-bright-font-86215513.jpg)
 
