@@ -66,8 +66,8 @@ There is an array array of strings which are contained withing square brackets -
 
 We can see the entire response is actually one big JSON object.
 
-```
-{  <---- start of the object
+```json
+{
 	"url": "https://anapioficeandfire.com/api/houses/378",
 	"name": "House Targaryen of King's Landing",
   ...
@@ -75,7 +75,7 @@ We can see the entire response is actually one big JSON object.
   ...
 		"https://anapioficeandfire.com/api/characters/2128"
 	]
-} <---- closing the object
+}
 ```
 
 This root object does not have a key. In this case it is a single object but it is possible for it to be an array e.g. https://anapioficeandfire.com/api/characters
