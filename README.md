@@ -228,7 +228,11 @@ First we will write a C# program that will generate a basic HTML file, which doe
 
 ### 4.1. Step 1 - Basic Content
 
-Your objective here is to generate an HTML file, which does not have any style, just proper HTML tags with content. Have a look at the sample html file found in `game-of-html/samples/index.html`
+Create a new project in Visual Studio to perform this work. It will be a good idea to place this new project within this folder `game-of-HTML`, that way you can commit it to the same repo as this file.
+
+Your objective here is to generate an HTML file, which does not have any style, just proper HTML tags with content.
+
+Have a look at the sample html file found in `game-of-html/samples/index.html`
 
 Your HTML document must start the same way with
 
