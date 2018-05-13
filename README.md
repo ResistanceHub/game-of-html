@@ -141,7 +141,7 @@ There are two challenges to overcome when consuming data from an API serving JSO
 - Desrializing the JSON
 - Requesting the DATA
 
-### Using C# to Deserialize JSON
+### Deserialize JSON
 
 When making a request in C# it is common for a response to be returned as a string. This string contains the JSON response. JSON is serialized data. To use this in C# we need to convert the JSON string into a C# object - this is known as deserialization.
 
