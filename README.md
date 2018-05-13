@@ -63,9 +63,9 @@ Go to the "API of Ice and Fire" site (https://anapioficeandfire.com/) and you wi
 
 As you can see, the data is being returned serialixed as JSON.
 
-Let's examine the results in more detail. Click on /houses/378, this will return the data found at: https://anapioficeandfire.com/api/houses/378
+Let's view the results in detail. Click on /houses/378, this will return the data found at: https://anapioficeandfire.com/api/houses/378
 
-Take a moment to examine the data. We can see some of the structures described in the w3schools JSON tutorial mentioned above. We can see the key value pairs used in JSON.
+We can see some of the structures described in the w3schools JSON tutorial mentioned above. We can see the key value pairs used in JSON.
 
 A string example
 ```json
