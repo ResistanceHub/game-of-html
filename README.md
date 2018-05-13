@@ -346,8 +346,5 @@ If you managed this, congratulations!!!
 
 ![Schema](https://thumbs.dreamstime.com/t/congratulations-bubble-bright-font-86215513.jpg)
 
+
 _Please let us know on slack if you found this helpful._
-
-#### Game of Thrones Trivia
-
-The TV show is called 'A Game of Thrones', while the original book series is called 'A song of Ice and Fire' and the first book it titled 'A Game of Thrones.
