@@ -19,41 +19,43 @@ This exercise will give you some experience with:
 
 The overall goal is to fetch data from a network API and then write that data into an HTML file.
 
-Once this is done we will write a few e2e tests to verify certain aspects of the page.
-
-## Exploring the API
-
 We will be using data from "An API of Ice and Fire" - https://anapioficeandfire.com/
 
-This API provides information about the Game Of Thrones books.
 
-Documentation can be found here: https://anapioficeandfire.com/Documentation
+## Preparation
 
-The "Resources" section may be of help in completing this challenge.
+Before getting into the coding challenge we will cover some topics that will be useful to complete the exercise.
 
-Go to the "API of Ice and Fire" site (https://anapioficeandfire.com/) and you will see example URLs to use e.g. click on the links /books/1, /characters/583 etc.
+## JSON
 
-These can be found just under the first text field. This will show you the data being returned from the endpoints.
+Like many APIs, anapioficeandfire.com returns data formatted in JavaScript Object Notation (JSON). Therefore it will be helpful to know about JSON. w3schools provides a good introduction to this data format - https://www.w3schools.com/js/js_json_intro.asp
 
-This data is being returned in a serialization format known as JSON.
+JSON is a serialization format. As explained [here](https://stackoverflow.com/a/2170700/259477):
+> *Serialization* is the process of taking an object instance and converting it to a format in which it can be transported across a network or persisted to storage (such as a file or database). The serialized format contains the object's state information. *Deserialization* is the process of using the serialized state to reconstruct the object from the serialized state to its original state.
 
-### Introduction to JSON
+## Exploring anapioficeandfire.com
 
-Go to the "An API of Ice and Fire" site (https://anapioficeandfire.com/) and click on /houses/378.
+anapioficeandfire.com provides information about the Game Of Thrones books. Documentation can be found here: https://anapioficeandfire.com/Documentation. The "Resources" section may be of help in completing this challenge.
 
-This will return the data found at: https://anapioficeandfire.com/api/houses/378
+Go to the "API of Ice and Fire" site (https://anapioficeandfire.com/) and you will see example URLs to use. Click on the links /books/1, /characters/583 etc.
 
-Take a moment to examine the data. It is fairly readable to humans. JSON uses key value pairs.
+![Scheme](images/example-links.png)
+
+As you can see, the data is being returned serialixed as JSON.
+
+Let's examine the results in more detail. Click on /houses/378, this will return the data found at: https://anapioficeandfire.com/api/houses/378
+
+Take a moment to examine the data. We can see some of the structures described in the w3schools JSON tutorial mentioned above. We can see the key value pairs used in JSON.
 
 A string example
-```
+```json
 "region": "The Crownlands"
 ```
 
 The key is `"region"` and the value is `"The Crownlands"`.
 
-An array of strings is contained withing square brackets - "[" and "]"
-```
+There is an array array of strings which are contained withing square brackets - `"["` and `"]"`
+```json
 "titles": [
   "King of the Andals, the Rhoynar and the First Men",
   "Lord of the Seven Kingdoms",
@@ -61,38 +63,7 @@ An array of strings is contained withing square brackets - "[" and "]"
 ]
 ```
 
-In JSON Objects are contained in brackets - `"{"` and `"}"`. It is possible for the value to be an object. This API does not seem to use them.
-
-To see an example of an object as the value you can open this URL in a browser: https://postman-echo.com/get?foo1=bar1&foo2=bar2
-
-```
-"args": {
-  "foo1": "bar1",
-  "foo2": "bar2"
-}
-```
-That shows a key of `"args"` with a value being a nested JSON object. That object has two keys: `"foo1"` and `"foo2"`. The values of those keys are simple strings.
-
-For completeness, the value can also be an array of objects.
-```
-"animals": [{
-    "type": "cow"
-    "sound": "moo",
-    "id": 4
-  },
-  {
-    "type": "elephant"
-    "sound": "toot!",
-    "id": 3
-  },
-  {
-    "type": "dog",
-    "sound": "woof woof",
-    "id": 6
-  }]
-```
-
-Going back to the original example (api/houses/378), we can see the entire response is actually one big JSON object.
+We can see the entire response is actually one big JSON object.
 
 ```
 {  <---- start of the object
@@ -105,14 +76,23 @@ Going back to the original example (api/houses/378), we can see the entire respo
 	]
 } <---- closing the object
 ```
-This root object does not have a key. In this case it is an object but it is possible for it to be an array e.g. https://anapioficeandfire.com/api/characters
 
-You can read more about JSON here https://www.w3schools.com/js/js_json_intro.asp.
+This root object does not have a key. In this case it is a single object but it is possible for it to be an array e.g. https://anapioficeandfire.com/api/characters
 
+Notice the response starts with brackets
+
+```json
+[
+  {
+    "url": "https://anapioficeandfire.com/api/characters/1",
+    "name": "",
+    "gender": "Female",
+    "culture": "Braavosi",
+```
 
 ### Using the browser to fetch data from the API
 
-Placing a URL into the address bar and pressing `ENTER` results in the browser making a "GET" request to the server. The server processes the request and returns the results.
+Placing a URL into the address bar and pressing `ENTER` results in the browser making a `GET` request to the server. The server processes the request and returns the results.
 
 Open Chrome and copy some of the API urls into the address bar and press `ENTER`:
 
@@ -130,7 +110,7 @@ Postman is a tool that can be used to make API requests. You can download it fro
 
 This page explains how to make requests: https://www.getpostman.com/docs/v6/postman/launching_postman/sending_the_first_request
 
-Perform "GET" requests on these URLs
+Perform `GET` requests on these URLs
 
 - https://anapioficeandfire.com/api/books
 - https://anapioficeandfire.com/api/characters
@@ -145,21 +125,24 @@ Curl is a command line tool, often used by developers to make quick calls to API
 ```
 curl https://anapioficeandfire.com/api/houses/1
 ```
-For a pretty (formatted) output try:
+For a pretty print (formatted) output try:
 
 ```
 curl https://anapioficeandfire.com/api/houses/1 | json_pp
 ```
 
-This was a GET request, but you can perform all the HTTP requests with curl e.g. POST, PUT, DELETE etc
+This was a `GET` request, but you can perform all the HTTP requests with curl e.g. `POST`, `PUT`, `DELETE` etc
 
 ## Using C# to fetch data from the API
 
-When making a request in C# it is common for response to be returned as a string. This string contains the JSON response.
+There are two challenges to overcome when consuming data from an API serving JSON.
 
-JSON is serialized data. To use this in C# we need to convert the JSON string into a C# object - this is known as deserialization.
+- Desrializing the JSON
+- Requesting the DATA
 
-### Deserialize JSON
+### Deserialize JSON in C#
+
+When making a request in C# it is common for a response to be returned as a string. This string contains the JSON response. JSON is serialized data. To use this in C# we need to convert the JSON string into a C# object - this is known as deserialization.
 
 There are numerous libraries that can be used to deserialize JSON. Json.Net (https://www.newtonsoft.com/json) is one of the most popular libraries. This can be installed through NuGet Package manager.
 
@@ -184,6 +167,8 @@ Make sure that you read a few of the options there before you decide which to tr
 
 ## Reading and Writing Files
 
+To solve this challenge you need to be able to write to text files. It may also be helpful to be able to read from files _hint hint_.
+
 This tutorial shows how to read and write to files in C# - http://csharp.net-tutorials.com/file-handling/reading-and-writing/
 
 Look out for:
@@ -191,25 +176,47 @@ Look out for:
 - File.ReadAllText
 - File.WriteAllText
 
+Also note where your file is being placed. I suspect that if you don't supply a full path or relative path, the file will end up in the `bin/debug` folder.
+
 ## The Challenge
+
+Now that we have covered most of the tools and technologies needed to perform this coding challenge, we can get into the details. Please note that the steps below are a guide, but they are not detailed instructions.
 
 The challenge is to use anapioficeandfire.com to create an html file displaying all the books, and each point of view (POV) character in each book.
 
-First we will create a basic HTML file, which does not contain any styling (no classes or css). In step 2 we will add CSS and the required classes.
+A rough depiction of this would be:
+
+```
+Book Title
+  Character name, Alive\Dead, culture
+  Character name, Alive\Dead, culture
+  Character name, Alive\Dead, culture
+  ...
+Book Title
+  Character name, Alive\Dead, culture
+  Character name, Alive\Dead, culture
+  Character name, Alive\Dead, culture
+  ...
+Book Title
+  Character name, Alive\Dead, culture
+  Character name, Alive\Dead, culture
+  Character name, Alive\Dead, culture
+  ...
+```
+
+First we will write a C# program that will generate a basic HTML file, which does not contain any styling (no classes or CSS). In step 2 we will add CSS and the required classes.
 
 ### Step 1 - Basic Content
 
-Your objective here it to create an HTML file, which does not have any style, just proper HTML tags with content.
-
-Have a look at the sample html file found in `game-of-html/samples/index.html`
+Your objective here is to generate an HTML file, which does not have any style, just proper HTML tags with content. Have a look at the sample html file found in `game-of-html/samples/index.html`
 
 Your HTML document must start the same way with
 
 - a doctype
 - opening the `html` and `body` tags
-- declare a header which uses a `div` and `h1`
+- declare a page header which uses a `div` and `h1`
 
-Make sure your page start with this:
+This section in `game-of-html/samples/index.html` is:
 
 ```
 <!DOCTYPE html>
@@ -218,16 +225,16 @@ Make sure your page start with this:
     <div><h1>Point of View Characters in Game of Thrones</h1></div>
 
 ```
-You also need to close these tags, place this at the end of the file
+You also need to close these tags, make sure you place this at the end of the file
 
 ```
   </body>
 </html>
 ```
 
-In the middle of these sections comes the books and characters section. For each book you need to add the book title and some details for each of the POV characters (povCharacters) in that book.
+In the middle of these parts comes the books and characters section. For each book you need to add the book title and some details for each of the POV characters (povCharacters) in that book.
 
-The sample page shows two books, with a few of the POV characters.
+`game-of-html/samples/index.html` shows two books, with a few of the POV characters.
 
 The title of the book should be added as follows:
 
@@ -236,10 +243,9 @@ The title of the book should be added as follows:
 ```
 Then add some details of each POV character. The details needed are the "name", "Alive\Dead", and "culture".
 
-These details must be added with the expected HTML tags. This is an example of the book title again, and the first two characters
+These details must be added with the expected HTML tags.
 
 ```
-    <h2>A Game of Thrones</h2>
     <div>
       <div>
         <div>Arya Stark</div>
@@ -278,7 +284,7 @@ Add the following `head` section
   <body>
 ```
 
-This is going to reference a CSS file, which needs to next to the HTML file you are creating. Copy\paste `samples/style.css` so that it is next to the html file that you are generating.
+That will include two google fonts and a local reference to a CSS file. This file needs to be placed next to the HTML file you are creating. Copy\paste `samples/style.css` so that it is next to the html file that you are generating.
 
 Add the following classes to the page header
 
@@ -310,12 +316,18 @@ This sample shows the remaining classes which are needed:
 
 Note the extra class for "dead" characters.
 
-Once this has been done correctly the page should look similar to this partial screenshot:
+Once this has been done correctly the page should show blue and grey blocks. The page should also be responsive - make the page thinner and the layout should change.
 
-![Scheme](images/styled-html.png)
+Take a screenshot of the page and share it on slack, and I will tell you if it looks correct 😃
+
+## The End
 
 If you managed this, congratulations!!!
 
-#### GoT Trivia
+![Schema](https://thumbs.dreamstime.com/t/congratulations-bubble-bright-font-86215513.jpg)
+
+_Please let us know on slack if you found this helpful._
+
+#### Game of Thrones Trivia
 
 The TV show is called 'A Game of Thrones', while the original book series is called 'A song of Ice and Fire' and the first book it titled 'A Game of Thrones.
