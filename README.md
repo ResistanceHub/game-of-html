@@ -1,22 +1,22 @@
 # Game of HTML
 
 
-- [1. Learning Outcomes](#1-learning-outcomes)
-- [2. The Goal](#2-the-goal)
-- [3. Preparation](#3-preparation)
-  - [3.1. JSON](#31-json)
-  - [3.2. Exploring anapioficeandfire.com](#32-exploring-anapioficeandfirecom)
-  - [3.3. Using the browser to fetch data from the API](#33-using-the-browser-to-fetch-data-from-the-api)
-  - [3.4. Using Postman to fetch data from the API](#34-using-postman-to-fetch-data-from-the-api)
-  - [3.5. Using curl to fetch data from the API](#35-using-curl-to-fetch-data-from-the-api)
-  - [3.6. Using C# to fetch data from the API](#36-using-c-to-fetch-data-from-the-api)
-    - [3.6.1. Deserialize JSON](#361-deserialize-json)
-    - [3.6.2. Making the request](#362-making-the-request)
-  - [3.7. Reading and Writing Files](#37-reading-and-writing-files)
-- [4. The Challenge](#4-the-challenge)
-  - [4.1. Step 1 - Basic Content](#41-step-1---basic-content)
-  - [4.2. Step 2 - Add Styles](#42-step-2---add-styles)
-- [5. The End](#5-the-end)
+- [1. Learning Outcomes](#markdown-header-1-learning-outcomes)
+- [2. The Goal](#markdown-header-2-the-goal)
+- [3. Preparation](#markdown-header-3-preparation)
+  - [3.1. JSON](#markdown-header-31-json)
+  - [3.2. Exploring anapioficeandfire.com](#markdown-header-32-exploring-anapioficeandfirecom)
+  - [3.3. Using the browser to fetch data from the API](#markdown-header-33-using-the-browser-to-fetch-data-from-the-api)
+  - [3.4. Using Postman to fetch data from the API](#markdown-header-34-using-postman-to-fetch-data-from-the-api)
+  - [3.5. Using curl to fetch data from the API](#markdown-header-35-using-curl-to-fetch-data-from-the-api)
+  - [3.6. Using C# to fetch data from the API](#markdown-header-36-using-c-to-fetch-data-from-the-api)
+    - [3.6.1. Deserialize JSON](#markdown-header-361-deserialize-json)
+    - [3.6.2. Making the request](#markdown-header-362-making-the-request)
+  - [3.7. Reading and Writing Files](#markdown-header-37-reading-and-writing-files)
+- [4. The Challenge](#markdown-header-4-the-challenge)
+  - [4.1. Step 1 - Basic Content](#markdown-header-41-step-1---basic-content)
+  - [4.2. Step 2 - Add Styles](#markdown-header-42-step-2---add-styles)
+- [5. The End](#markdown-header-5-the-end)
 
 
 ## 1. Learning Outcomes
