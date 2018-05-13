@@ -136,7 +136,7 @@ This was a `GET` request, but you can perform all the HTTP requests with curl e.
 
 ## Using C# to fetch data from the API
 
-There are two challenges to overcome when consuming data from an API serving JSON.
+There are two challenges to overcome when consuming data from an API serving JSON
 
 - Desrializing the JSON
 - Requesting the DATA
