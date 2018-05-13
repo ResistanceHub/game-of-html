@@ -1,6 +1,5 @@
 # Game of HTML
 
-<!-- TOC depthFrom:2 -->
 
 - [1. Learning Outcomes](#1-learning-outcomes)
 - [2. The Goal](#2-the-goal)
@@ -19,7 +18,6 @@
   - [4.2. Step 2 - Add Styles](#42-step-2---add-styles)
 - [5. The End](#5-the-end)
 
-<!-- /TOC -->
 
 ## 1. Learning Outcomes
 
