@@ -208,19 +208,37 @@ A rough depiction of this would be:
 
 ```
 Book Title
-  Character name, Alive\Dead, culture
-  Character name, Alive\Dead, culture
-  Character name, Alive\Dead, culture
+  Character name 
+  Alive\Dead
+  Culture
+  Character name
+  Alive\Dead
+  Culture
+  Character name
+  Alive\Dead
+  Culture
   ...
 Book Title
-  Character name, Alive\Dead, culture
-  Character name, Alive\Dead, culture
-  Character name, Alive\Dead, culture
+  Character name 
+  Alive\Dead
+  Culture
+  Character name
+  Alive\Dead
+  Culture
+  Character name
+  Alive\Dead
+  Culture
   ...
 Book Title
-  Character name, Alive\Dead, culture
-  Character name, Alive\Dead, culture
-  Character name, Alive\Dead, culture
+  Character name 
+  Alive\Dead
+  Culture
+  Character name
+  Alive\Dead
+  Culture
+  Character name
+  Alive\Dead
+  Culture
   ...
 ```
 
