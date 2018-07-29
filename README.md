@@ -61,7 +61,7 @@ Go to the "API of Ice and Fire" site (https://anapioficeandfire.com/) and you wi
 
 ![Scheme](images/example-links.png)
 
-As you can see, the data is being returned serialixed as JSON.
+As you can see, the data is being returned serialized as JSON.
 
 Let's view the results in detail. Click on /houses/378, this will return the data found at: https://anapioficeandfire.com/api/houses/378
 
