@@ -1,0 +1,8 @@
+C:\src\game-of-html\app\FireAndIceApp\bin\Debug\FireAndIceApp.exe.config
+C:\src\game-of-html\app\FireAndIceApp\bin\Debug\FireAndIceApp.exe
+C:\src\game-of-html\app\FireAndIceApp\bin\Debug\FireAndIceApp.pdb
+C:\src\game-of-html\app\FireAndIceApp\obj\Debug\FireAndIceApp.csprojResolveAssemblyReference.cache
+C:\src\game-of-html\app\FireAndIceApp\obj\Debug\FireAndIceApp.exe
+C:\src\game-of-html\app\FireAndIceApp\obj\Debug\FireAndIceApp.pdb
+C:\src\game-of-html\app\FireAndIceApp\bin\Debug\RestSharp.dll
+C:\src\game-of-html\app\FireAndIceApp\bin\Debug\style.css
